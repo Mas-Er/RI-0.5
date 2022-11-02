@@ -98,6 +98,7 @@ jobs:
           echo "::set-output name=SOURCE_OWNER::$(echo $SOURCE_OWNER)"
           export SOURCE_REPO="$(echo $SOURCE_URL | awk -F '/' '{print $(NF)}')"
           echo "SOURCE_REPO=$SOURCE_REPO" >> $GITHUB_ENV
+          #echo "::set-output name=SOURCE_REPO::$(echo $SOURCE_REPO)"
           echo "::set-output name=SOURCE_REPO::$(echo $SOURCE_REPO)"
           export DEVICE_TARGET=$(cat .config | grep CONFIG_TARGET_BOARD | awk -F '"' '{print $2}')
           echo "DEVICE_TARGET=$DEVICE_TARGET" >> $GITHUB_ENV
@@ -139,6 +140,7 @@ jobs:
           export CACHE_HASH=$(curl -fSsL https://github.com/$GITHUB_REPOSITORY/releases/download/$TOOLCHAIN_TAG/$TOOLCHAIN_IMAGE.hash)
           echo "CACHE_HASH is $CACHE_HASH"
           if [ -z "$CACHE_HASH" ] || [ "$CURRENT_HASH" != "$CACHE_HASH" ]; then
+            #echo "::set-output name=REBUILD_TOOLCHAIN::true"
             echo "::set-output name=REBUILD_TOOLCHAIN::true"
           fi
 
