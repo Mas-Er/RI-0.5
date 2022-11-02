@@ -44,7 +44,7 @@ sed -i 's/immortalwrt.org/openwrt.org/g' include/version.mk
 
 # Version Update
 sed -i '/DISTRIB_DESCRIPTION/d' package/base-files/files/etc/openwrt_release
-echo "DISTRIB_DESCRIPTION=' Beta5-2 build $(TZ=UTC+8 date "+%Y.%m") '" >> package/base-files/files/etc/openwrt_release
+echo "DISTRIB_DESCRIPTION=' RI-B0-B1 build $(TZ=UTC+8 date "+%Y.%m") '" >> package/base-files/files/etc/openwrt_release
 sed -i '/DISTRIB_REVISION/d' package/base-files/files/etc/openwrt_release
 echo "DISTRIB_REVISION='[WSS]'" >> package/base-files/files/etc/openwrt_release
 
@@ -110,7 +110,7 @@ svn export https://github.com/fw876/helloworld/trunk/v2ray-core feeds/packages/n
 svn export https://github.com/fw876/helloworld/trunk/v2ray-geodata feeds/packages/net/v2ray-geodata
 svn export https://github.com/fw876/helloworld/trunk/v2ray-plugin feeds/packages/net/v2ray-plugin
 svn export https://github.com/fw876/helloworld/trunk/v2raya feeds/packages/net/v2raya
-svn export https://github.com/arqam999/openwrt-passwall/branches/xtls-wss-1.6.1/xray-core feeds/packages/net/xray-core
+svn export https://github.com/arqam999/openwrt-passwall/branches/xtls-wss-1-6-1/xray-core feeds/packages/net/xray-core
 svn export https://github.com/fw876/helloworld/trunk/xray-plugin feeds/packages/net/xray-plugin
 svn export https://github.com/fw876/helloworld/trunk/lua-neturl feeds/packages/net/lua-neturl
 svn export https://github.com/immortalwrt/packages/trunk/net/dns2socks feeds/packages/net/dns2socks
