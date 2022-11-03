@@ -110,7 +110,7 @@ svn export https://github.com/fw876/helloworld/trunk/v2ray-core feeds/packages/n
 svn export https://github.com/fw876/helloworld/trunk/v2ray-geodata feeds/packages/net/v2ray-geodata
 svn export https://github.com/fw876/helloworld/trunk/v2ray-plugin feeds/packages/net/v2ray-plugin
 svn export https://github.com/fw876/helloworld/trunk/v2raya feeds/packages/net/v2raya
-svn export https://github.com/arqam999/openwrt-passwall/branches/xtls-wss/xray-core feeds/packages/net/xray-core
+svn export https://github.com/arqam999/openwrt-passwall/branches/xtls-wss-1510/xray-core feeds/packages/net/xray-core
 svn export https://github.com/fw876/helloworld/trunk/xray-plugin feeds/packages/net/xray-plugin
 svn export https://github.com/fw876/helloworld/trunk/lua-neturl feeds/packages/net/lua-neturl
 svn export https://github.com/immortalwrt/packages/trunk/net/dns2socks feeds/packages/net/dns2socks
@@ -147,6 +147,16 @@ pushd package/community
 
 # Add Argon theme configuration
 #git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
+
+# update mwan3
+rm -rf package/lean/luci-app-mwan3helper
+svn co https://github.com/Lienol/openwrt/branches/21.02/package/lean/luci-app-mwan3helper package/lean/luci-app-mwan3helper
+
+rm -rf ./feeds/luci/applications/luci-app-mwan3
+svn co https://github.com/openwrt/luci/branches/openwrt-21.02/applications/luci-app-mwan3 feeds/luci/applications/luci-app-mwan3
+
+rm -rf ./feeds/packages/net/mwan3
+svn co https://github.com/openwrt/packages/branches/openwrt-21.02/net/mwan3 feeds/packages/net/mwan3
 
 # Add official OpenClash source
 git clone --depth=1 -b dev https://github.com/vernesong/OpenClash
