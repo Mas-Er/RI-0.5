@@ -148,6 +148,16 @@ pushd package/community
 # Add Argon theme configuration
 #git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 
+# update mwan3
+rm -rf package/lean/luci-app-mwan3helper
+svn co https://github.com/Lienol/openwrt/branches/21.02/package/lean/luci-app-mwan3helper package/lean/luci-app-mwan3helper
+
+rm -rf ./feeds/luci/applications/luci-app-mwan3
+svn co https://github.com/openwrt/luci/branches/openwrt-21.02/applications/luci-app-mwan3 feeds/luci/applications/luci-app-mwan3
+
+rm -rf ./feeds/packages/net/mwan3
+svn co https://github.com/openwrt/packages/branches/openwrt-21.02/net/mwan3 feeds/packages/net/mwan3
+
 # Add official OpenClash source
 git clone --depth=1 -b dev https://github.com/vernesong/OpenClash
 
