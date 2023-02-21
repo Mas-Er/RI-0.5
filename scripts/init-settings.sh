@@ -66,7 +66,6 @@ echo | tee -a /etc/crontabs/root
 echo '# Stop Flooding Ping' | tee -a /etc/crontabs/root
 echo "* * * * * pgrep ping | awk 'NR >= 3' | xargs -n1 kill" | tee -a /etc/crontabs/root
 echo | tee -a /etc/crontabs/root
-echo "##############################################################"| tee -a /etc/crontabs/root
 #echo '# Clear Log' | tee -a /etc/crontabs/root
 #echo "*/15 * * * * /etc/init.d/log restart >/dev/null 2>&1" | tee -a /etc/crontabs/root
 
